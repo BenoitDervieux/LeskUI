@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Collection Details</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header_container">
+            <div class="left_nav column"></div>
+            <div class="middle_nav column">
+                <a href="index.html">Collections</a>
+                <a href="effects.html">Effects</a>
+                <a href="settings.html">Settings</a>
+            </div>
+            <div class="right_nav column"></div>
+        </div>
+    </header>
+    <h1>Effects</h1>
+    <div id="collection-details"></div>
+
+    <div id="modal-sheet" class="modal-sheet closed">
+        <div class="containerArrow">
+          <div class="arr top"><img src="img/right-arrow.png" id="arrow"></div>
+        </div>
+        <div class="container_color_wheel_and_palettes">
+          <div id="colorWheel" class="colorWheel"></div>
+          <div id="palettes" class="palettes pres_pal">
+          </div>
+        </div>
+        <div id="settings-details"></div>
+    </div>
+  <script type="module" src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5.5.1/dist/iro.min.js"></script>
+</body>
+</html>
