@@ -1,73 +1,10 @@
-body {
-    margin: 0px;
-}
-.header_container {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.column {
-    float: left;
-    width: 33.33%;
-}
-
-.middle_nav {
-    text-align: center;
-}
-
-.middle_nav a:not(:last-child) {
-    padding-right: 5vh;
-}
-
-h1 {
-    text-align: center;
-}
-
-.collection-rectangle {
-    width: 100%;
-    text-align: center;
-}
-
-.text-container {
-    width: 50%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1vh;
-    cursor: pointer;
-}
-
-.effect-name {
-    padding:1em 1em 0 1em;
-    margin-bottom: 0;
-}
-
-.effect-list {
-    margin-top: 0;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    padding-bottom: 1em;
-}
-
 /*
 #
 # Modal Bottom Sheet
 #
 #
 */
-.main-content {
-    padding: 20px;
-    text-align: center;
-}
   
-/* Modal Bottom Sheet Styles */
 .modal-sheet {
 position: fixed;
 bottom: -72%;
@@ -91,20 +28,10 @@ padding-left: 20px;
 padding-right: 20px;
 margin: 0px;
 padding-top: 0%;
-
 }
 
 .sheet-content h2 {
 margin-top: 0;
-}
-
-/* Close button */
-.close-sheet {
-font-size: 24px;
-cursor: pointer;
-position: absolute;
-top: 10px;
-right: 20px;
 }
 
 /*
@@ -168,7 +95,7 @@ text-align: center;
 
 .grid-container {
 display: grid;
-grid-template-columns: auto auto;
+grid-template-columns: auto auto auto;
 }
 
 
@@ -178,13 +105,20 @@ padding-bottom: 100px;
 
 .container_color_wheel_and_palettes {
 display: grid;
-grid-template-columns: 50% 50%;
-
+grid-template-columns: 33% 33% 33%;
+align-self: stretch;
+/* display:flex;
+flex-direction: row;
+margin-left: auto;
+margin-right: auto;
+padding-left: 2vh;
+padding-right: 2vh; */
 }
 
 .colorWheel {
 margin: auto;
 align-items: center;
+
 }
 
 .palettes {
@@ -222,13 +156,13 @@ transform: scale(1.05);
 }
 .IroColorPicker {
 align-items: center;
-
 }
+
 
 .IroWheelHue:hover {
 /* background-color: rgba(0, 0, 0, 0.3);  Lighter shade on hover */
 background-color: rgba(0, 0, 0, 0.05) !important;
-transform: scale(1.05) !important;  /* Slight zoom effect */
+transform: scale(1.05) !important;  /* Slight zoom effect */;
 }
 .IroWheelHue.selected {
 background-color: #333;  /* Darker shade when selected */
@@ -247,6 +181,7 @@ rotate: 90deg;
 .palettes {
 display: flex;
 flex-wrap: wrap;
+justify-content:center;
 gap: 16px;
 }
 
@@ -258,8 +193,8 @@ gap: 2px;
 }
 
 .square {
-width: 75px;
-height: 75px;
+width: 5vh;
+height: 5vh;
 }
 
 /* Open state */
@@ -267,20 +202,24 @@ height: 75px;
     bottom: 0;
   }
   
-  .containerArrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 100%;
-    background-color: #f5f5f5;
-    border-radius: 15px 15px 0 0;
-    margin-bottom: 0%;
-  }
-  
-  #arrow {
-    transform: rotate(-90deg);
-    width: 25px;
-    height: 25px;
-  
-  }
+.containerArrow {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 1vh;
+width: 100%;
+margin-top: 1vh;
+background-color: #f5f5f5;
+border-radius: 15px 15px 0 0;
+margin-bottom: 0%;
+}
+
+#arrow {
+transform: rotate(-90deg);
+width: 25px;
+height: 25px;
+}
+
+.arr {
+cursor: pointer;
+}

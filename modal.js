@@ -2,6 +2,12 @@ const arrow = document.querySelector('#arrow')
 arrow.addEventListener('click', moveSheet);
 import palettes from './palettes.js';
   
+/**
+ * Renders all the palettes to the DOM.
+ * @param {Object} palettes An object where the keys are palette names and the
+ * values are arrays of colors in the palette. The colors will be used to create
+ * a gradient effect on a square.
+ */
 const renderPalettes = (palettes) => {
   const palettesContainer = document.getElementById("palettes");
   let rowDiv = document.createElement("div");
@@ -45,63 +51,62 @@ const renderPalettes = (palettes) => {
       palettesContainer.appendChild(rowDiv);
   }
 };
-// Run the function to render the palettes
-renderPalettes(palettes);
 
-// Create a new color wheel instance
+
+const renderColorWheel = () => {
+  // Create a new color wheel instance
 let colorWheel = new iro.ColorPicker("#colorWheel", {
-    width: 150, // Size of the color wheel
-    color: "#ffffff" // Initial color
+  width: 100, // Size of the color wheel
+  color: "#ffffff" // Initial color
 });
 
 // Update the displayed color value when it changes
 colorWheel.on('color:change', function(color) {
-  console.log("La couleur elle a changé" + color.hexString);
-  changeColor(color.hexString);
+console.log("La couleur elle a changé" + color.hexString);
+changeColor(color.hexString);
 });
 
 // Select the container that includes both the color wheel and squares
 const elements = document.querySelectorAll('.square, #colorWheel'); // Adjust selector as needed
 elements.forEach(element => {
 element.addEventListener('click', () => {
-  // Remove 'selected' from all elements to ensure only one is selected
-  elements.forEach(el => el.classList.remove('selected'));
-  let wheels = document.querySelectorAll('.IroWheelHue'); // Use '.' if it's a class, no dot if it's a tag
-  // Loop through each element and add the 'selected' class
-  wheels.forEach(wheel => {
-      wheel.classList.remove('selected');
-      wheel.classList.remove('rotate90deg');
-  });
+// Remove 'selected' from all elements to ensure only one is selected
+elements.forEach(el => el.classList.remove('selected'));
+let wheels = document.querySelectorAll('.IroWheelHue'); // Use '.' if it's a class, no dot if it's a tag
+// Loop through each element and add the 'selected' class
+wheels.forEach(wheel => {
+    wheel.classList.remove('selected');
+    wheel.classList.remove('rotate90deg');
+});
 
-  // Add the 'selected' class to the clicked element
-  element.classList.add('selected');
+// Add the 'selected' class to the clicked element
+element.classList.add('selected');
 
 
-  // Check for IroWheelHue elements and add 'selected' class if any are found
-  // let wheels = document.getElementsByClassName('IroWheelHue');
-  const elem = document.getElementById('colorWheel');
-  // console.log("La class list zeubi " + elem.classList[1]);
-  // console.log("Ca contient selected ? " + elem.classList.contains('selected'));
-  let wheel = document.querySelectorAll('.colorWheel');
-  
-  
-    if (elem.classList.contains('selected')) {
-      elem.classList.remove('selected');
-      // Select all elements with the class or tag `IroWheelHue`
-      let wheels = document.querySelectorAll('.IroWheelHue'); // Use '.' if it's a class, no dot if it's a tag
-      // Loop through each element and add the 'selected' class
-      wheels.forEach(wheel => {
-          wheel.classList.add('selected');
-          wheel.classList.add('rotate90deg');
-      });
-  }    
+// Check for IroWheelHue elements and add 'selected' class if any are found
+// let wheels = document.getElementsByClassName('IroWheelHue');
+const elem = document.getElementById('colorWheel');
+// console.log("La class list zeubi " + elem.classList[1]);
+// console.log("Ca contient selected ? " + elem.classList.contains('selected'));
+let wheel = document.querySelectorAll('.colorWheel');
+
+
+  if (elem.classList.contains('selected')) {
+    elem.classList.remove('selected');
+    // Select all elements with the class or tag `IroWheelHue`
+    let wheels = document.querySelectorAll('.IroWheelHue'); // Use '.' if it's a class, no dot if it's a tag
+    // Loop through each element and add the 'selected' class
+    wheels.forEach(wheel => {
+        wheel.classList.add('selected');
+        wheel.classList.add('rotate90deg');
+    });
+}    
 });
 });
 console.log("Rendered Selected");
 
+}
 
-fetcheffets();
-updateSettings();
 function fetcheffets() {
 fetch(`http://192.168.1.236/api/effects`)
 .then(response => {
@@ -175,8 +180,6 @@ fetch('/palette', {
 })
 .catch(error => console.error('Error:', error));
 }
-
-
 
 // Function to handle the effect change
 function changeEffect(effectName) {
@@ -332,29 +335,100 @@ if (document.getElementById("modal-sheet").classList.contains("open")) {
 }
 
 
-const rangeInput = document.getElementById('brightness_range');
-// Listen for changes in the range input
-rangeInput.addEventListener('input', function() {
-console.log('Range value changed to:', rangeInput.value);
+// const rangeInput = document.getElementById('brightness_range');
+// // Listen for changes in the range input
+// rangeInput.addEventListener('input', function() {
+// console.log('Range value changed to:', rangeInput.value);
+// });
+// const sliderBrightness = document.getElementById('brightness_range');
+// const sliderValueBrightness = document.querySelector(".value_bri")
+
+// sliderBrightness.addEventListener("input", (event) => {
+// console.log(sliderBrightness)
+// const tempSliderValue = event.target.value; 
+// sliderValueBrightness.textContent = tempSliderValue;
+
+// const progress = (tempSliderValue / sliderBrightness.max) * 100;
+
+// })
+
+// const sliderMic = document.getElementById('mic_range');
+// const sliderValueMicInput = document.querySelector(".value_mic_input")
+
+// sliderMic.addEventListener("input", (event) => {
+// console.log(sliderBrightness)
+// const tempSliderValue = event.target.value; 
+// sliderValueMicInput.textContent = tempSliderValue;
+// const progress = (tempSliderValue / sliderMic.max) * 100;
+// });
+
+// Create a div for each individual setting
+const settingDiv = document.createElement('div');
+settingDiv.classList.add('setting-group', 'setting_name');
+
+// Create a label element for the setting
+const brightnessLabel = document.createElement('label');
+brightnessLabel.classList.add('setting_name');
+brightnessLabel.setAttribute('for', `brightness_range`);
+brightnessLabel.textContent = 'brightness';
+
+// // Create a div to hold the range slider and its value
+const rangeContainer = document.createElement('div');
+rangeContainer.classList.add('rangeAndNumber', 'brightness_range');
+
+// Create an input element (range slider)
+const rangeInput = document.createElement('input');
+rangeInput.type = 'range';
+rangeInput.id = `brightness_range_id`;
+rangeInput.name = 'brightness_range';
+rangeInput.classList.add('setting_button');
+rangeInput.min = 0;  // Set minValue from the JSON
+rangeInput.max = 250;  // Set maxValue from the JSON
+rangeInput.value = 100;  // Initialize to min value
+
+// Create a div to display the value of the range slider
+const valueDiv = document.createElement('div');
+valueDiv.classList.add('value_display');
+valueDiv.textContent = rangeInput.value; // Initial value (minValue)
+
+// Update the displayed value as the range slider changes
+rangeInput.addEventListener('input', () => {
+    valueDiv.textContent = rangeInput.value;
 });
-const sliderBrightness = document.getElementById('brightness_range');
-const sliderValueBrightness = document.querySelector(".value_bri")
 
-sliderBrightness.addEventListener("input", (event) => {
-console.log(sliderBrightness)
-const tempSliderValue = event.target.value; 
-sliderValueBrightness.textContent = tempSliderValue;
-
-const progress = (tempSliderValue / sliderBrightness.max) * 100;
-
-})
-
-const sliderMic = document.getElementById('mic_range');
-const sliderValueMicInput = document.querySelector(".value_mic_input")
-
-sliderMic.addEventListener("input", (event) => {
-console.log(sliderBrightness)
-const tempSliderValue = event.target.value; 
-sliderValueMicInput.textContent = tempSliderValue;
-const progress = (tempSliderValue / sliderMic.max) * 100;
+// Trigger changeSetting when the user changes the range
+rangeInput.addEventListener('change', () => {
+    changeSetting(setting.realNames, rangeInput.value);  // Call changeSetting when value changes
 });
+
+// Append the range slider and value to the container div
+rangeContainer.appendChild(rangeInput);
+rangeContainer.appendChild(valueDiv);
+
+// Append the label and range container to the setting div
+settingDiv.appendChild(brightnessLabel);
+settingDiv.appendChild(rangeContainer);
+
+// // Append the setting div to the main container
+const mainSettingsDiv = document.querySelector('.inputs_settings');
+mainSettingsDiv.appendChild(settingDiv);
+
+
+
+
+// const brightnessRange = document.createElement('input');
+// brightnessRange.type = 'range';
+// brightnessRange.min = 0;
+// brightnessRange.max = 255;
+// brightnessRange.value = 50;
+// const settingsWrapper = document.createElement('div'); 
+// const rangesDiv = document.querySelector('inputs_settings')
+// settingsWrapper.appendChild(rangesDiv);
+// rangesDiv.appendChild(settingsWrapper);
+
+
+
+renderColorWheel();
+renderPalettes(palettes);
+fetcheffets();
+updateSettings();
