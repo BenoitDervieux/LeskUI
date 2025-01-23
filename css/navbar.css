@@ -1,0 +1,187 @@
+/*##########################################################
+This is the navbar section
+############################################################*/
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.7); /* Initial background color with some opacity */
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+      /* ### FOR COMPUTER ### */
+      @media (min-width: 650px) {
+      & .navbar-left {
+      width: 75%;
+      display: flex;
+      align-items: center;
+      padding: 8px 8px 8px 32px;
+          & .logo_blanc {
+              width: 4vh;
+              padding-right: 16px;
+          }
+  
+          & .menu_choices_left {
+              color: white;
+              font-weight: 300;
+              align-items: center;
+              padding-right: 16px;
+          }
+          & .selected {
+              font-weight: 700;
+          }
+      }
+      & .navbar-right {
+          width: 25%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 8px 32px 8px 8px;
+          & .profile_picture {
+              width: 2em;
+          }
+          & .search_icon {
+              padding-right: 8px;
+              align-items: center;
+          }
+          #search{
+              color: white;
+              padding-left: 0.2em;
+              padding-right: 1em;
+          }
+          }
+      }
+      /* ### MOBILE ### */
+      @media (max-width: 650px) {
+      & .navbar-left {
+      width: 70%;
+      display: block;
+      align-items: center;
+      padding: 8px 8px 8px 32px;
+          & .logo_blanc {
+              width: 2em;
+              padding-right: 16px;
+          }
+  
+          & .menu_choices_left {
+              color: white;
+              font-size: 2em;
+              font-weight: 300;
+              align-items: center;
+              padding-right: 16px;
+              display: none;
+          }
+      }
+      & .navbar-right {
+          width: 30%;
+          display: block;
+          text-align: right;
+          justify-content: flex-end;
+          padding: 8px 32px 8px 8px;
+          & .profile_picture {
+              display: none;
+              width: 3em;
+          }
+          & .search_icon {
+              display: none;
+              padding-right: 8px;
+              align-items: center;
+          }
+          & .menu_choices_right{
+              display: none;
+          }
+          & .hamburger_menu {
+              display: block;
+              text-align: right;
+              justify-content: flex-end;
+              float: right;
+              & .hamburger_menu_bars {
+                  height: 0.2em;
+                  width: 2em;
+                  background-color: white;
+                  margin-bottom: 0.4em;
+                  margin-top: 0.4em;
+                  transform-origin: 0.1em 0.1em;                
+              }
+              & .hamb_close1 {
+                  & .first_div {
+                      animation: animate_menu_3 300ms forwards;
+                      }
+                      & .second_div {
+                          opacity: 100;   
+                      }
+                      & .third_div {
+                          
+                          animation: animate_menu_4 300ms forwards;
+                      }
+              }
+              & .hamb_open {
+                  & .first_div {
+                  animation: animate_menu_1 300ms forwards;
+                  }
+                  & .second_div {
+                      opacity: 0;   
+                  }
+                  & .third_div {
+                      animation: animate_menu_2 300ms forwards;
+                  }
+              }             
+          }
+          
+  
+          }
+      }
+  }
+  @keyframes animate_menu_1 {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(45deg);
+      }
+  }
+  @keyframes animate_menu_2 {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(-45deg);
+      }  
+  }
+  @keyframes animate_menu_3 {
+      0% {
+          transform: rotate(45deg);
+      }
+      100% {
+          transform: rotate(0deg);
+      }
+  }
+  @keyframes animate_menu_4 {
+      0% {
+          transform: rotate(-45deg);
+      }
+      100% {
+          transform: rotate(0deg);
+      }  
+  }
+  @keyframes show_background {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }   
+  }
+  @keyframes fade_background {
+      0% {
+          opacity: 1;
+      }
+      100% {
+          opacity: 0;
+      }  
+      
+  }

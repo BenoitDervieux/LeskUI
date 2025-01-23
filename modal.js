@@ -56,7 +56,7 @@ const renderPalettes = (palettes) => {
 const renderColorWheel = () => {
   // Create a new color wheel instance
 let colorWheel = new iro.ColorPicker("#colorWheel", {
-  width: 100, // Size of the color wheel
+  width: 80, // Size of the color wheel
   color: "#ffffff" // Initial color
 });
 
@@ -328,7 +328,7 @@ function closePanel() {
 if (document.getElementById("modal-sheet").classList.contains("open")) {
   document.getElementById("modal-sheet").classList.remove("open");
   document.getElementById("modal-sheet").classList.add("closed");
-  document.getElementById("modal-sheet").style.bottom = '-75%';
+  document.getElementById("modal-sheet").style.bottom = '-72%';
   document.getElementById("arrow").style.transition = 'transform 150ms ease-in';
   document.getElementById("arrow").style.transform = 'rotate(270deg)';
 }
@@ -370,7 +370,7 @@ settingDiv.classList.add('setting-group', 'setting_name');
 const brightnessLabel = document.createElement('label');
 brightnessLabel.classList.add('setting_name');
 brightnessLabel.setAttribute('for', `brightness_range`);
-brightnessLabel.textContent = 'brightness';
+brightnessLabel.textContent = 'Brightness';
 
 // // Create a div to hold the range slider and its value
 const rangeContainer = document.createElement('div');

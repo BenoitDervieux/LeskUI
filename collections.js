@@ -2,6 +2,7 @@ const collections = {
     "collections": [
       {
         "name": "Party Vibes",
+        "description": "A collection to dance to!",
         "settings": [
           {
             "name": "Rainbow Cycle",
@@ -31,6 +32,7 @@ const collections = {
       },
       {
         "name": "Relaxation Mode",
+        "description": "Breathe in, breathe out",
         "settings": [
           {
             "name": "Breathe",
@@ -52,6 +54,7 @@ const collections = {
       },
       {
         "name": "Dynamic Energy",
+        "description": "Get pumped with that collection",
         "settings": [
           {
             "name": "Meteor Shower",
@@ -81,6 +84,7 @@ const collections = {
       },
       {
         "name": "Minimalist Lights",
+        "description": "To use the Lesk lights on a daily basis",
         "settings": [
           {
             "name": "Fade In-Out",

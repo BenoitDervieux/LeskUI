@@ -6,17 +6,37 @@
 </head>
 <body>
     <header>
-        <div class="header_container">
-            <div class="left_nav column"></div>
-            <div class="middle_nav column">
-                <a href="index.html">Collections</a>
-                <a href="effects.html">Effects</a>
-                <a href="settings.html">Settings</a>
-            </div>
-            <div class="right_nav column"></div>
+      <nav class="navbar">
+        <div class="navbar-left">
+            <img src="./img/Logo_white.png" class="logo_blanc">
+            <div id="menu_choices_id" class="menu_choices_list">
+            <a class="home menu_choices_left selected" id="home" href="home.html">Moods</a>
+            <a class="home menu_choices_left" id="effects" href="./effects.html">Effects</a>
+            <a class="home menu_choices_left" id="settings" href="/">Settings</a>
+          </div>
+          </div>
+        <div class="navbar-right">
+              <img src="./img/search.png" class="search_icon">
+              <a class="home menu_choices_right" id="search" href="/">search</a>
+              <img src="./img/profile-user.png" class="profile_picture">
+              <div>
+                <a class="hamburger_menu" href="#">
+                  <div id="btnHamburger_id"class="hamb_close">
+                    <div class="hamburger_menu_bars first_div"></div>
+                    <div class="hamburger_menu_bars second_div"></div>
+                    <div class="hamburger_menu_bars third_div"></div>
+                  </div>
+                </a>
+              </div>
         </div>
+    </nav>
     </header>
-    <h1>Lesk App</h1>
+    <div id="overlay_id" class="overlay"></div>
+    <div class="main_image_container">
+      <img src="./img/danny2.jpg" 
+      class="main_image">
+      <h1 class="welcome_page">Lesk controller</h1>
+    </div>
     <div id="collection-details"></div>
 
     <div id="modal-sheet" class="modal-sheet closed">
@@ -32,6 +52,7 @@
     </div>
   <script type="module" src="index.js"></script>
   <script type="module" src="modal.js"></script>
+  <script type="module" src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5.5.1/dist/iro.min.js"></script>
 </body>
 </html>
