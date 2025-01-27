@@ -1,4 +1,4 @@
-{
+const effects = {
     "effects": [
       {
         "name": "Rainbow Cycle",
@@ -67,3 +67,4 @@
     ]
   }
   
+  export default effects;

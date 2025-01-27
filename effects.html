@@ -5,32 +5,54 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header_container">
-            <div class="left_nav header_column"></div>
-            <div class="middle_nav header_column">
-                <a href="index.html">Collections</a>
-                <a href="effects.html">Effects</a>
-                <a href="settings.html">Settings</a>
-            </div>
-            <div class="right_nav header_column"></div>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-left">
+          <img src="./img/Logo_white.png" class="logo_blanc">
+          <div id="menu_choices_id" class="menu_choices_list">
+          <a class="home menu_choices_left selected" id="home" href="./index.html">Moods</a>
+          <a class="home menu_choices_left" id="effects" href="./effects.html">Effects</a>
+          <a class="home menu_choices_left" id="settings" href="/">Settings</a>
+          <a class="home menu_choices_left" id="new_playing" href="./nowPlaying.html">Now Playing</a>
         </div>
-    </header>
-    <h1>Effects</h1>
-    <div id="collection-details"></div>
+        </div>
+      <div class="navbar-right">
+            <img src="./img/search.png" class="search_icon">
+            <a class="home menu_choices_right" id="search" href="/">search</a>
+            <img src="./img/profile-user.png" class="profile_picture">
+            <div>
+              <a class="hamburger_menu" href="#">
+                <div id="btnHamburger_id"class="hamb_close">
+                  <div class="hamburger_menu_bars first_div"></div>
+                  <div class="hamburger_menu_bars second_div"></div>
+                  <div class="hamburger_menu_bars third_div"></div>
+                </div>
+              </a>
+            </div>
+      </div>
+  </nav>
+  </header>
+    <div id="overlay_id" class="overlay"></div>
+    <div class="main_image_container">
+      <img src="./img/effect-back.jpg" 
+      class="main_image">
+      <h1 class="welcome_page">Effects</h1>
+    </div>
+    <div id="effects-details"></div>
 
     <div id="modal-sheet" class="modal-sheet closed">
-        <div class="containerArrow">
-          <div class="arr top"><img src="img/right-arrow.png" id="arrow"></div>
-        </div>
-        <div class="container_color_wheel_and_palettes">
-          <div id="colorWheel" class="colorWheel"></div>
-          <div id="palettes" class="palettes pres_pal">
-          </div>
-        </div>
-        <div id="settings-details"></div>
-    </div>
-  <script type="module" src="index.js"></script>
+      <div class="containerArrow">
+        <div class="arr top"><img src="img/right-arrow.png" id="arrow"></div>
+      </div>
+      <div class="container_color_wheel_and_palettes">
+        <div id="colorWheel" class="colorWheel"></div>
+        <div id="palettes" class="palettes pres_pal"></div>
+        <div id="inputs_settings_id" class="inputs_settings"></div>
+      </div>
+      <div id="settings-details"></div>
+  </div>
+  <script type="module" src="effects.js"></script>
+  <script type="module" src="modal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5.5.1/dist/iro.min.js"></script>
 </body>
 </html>
