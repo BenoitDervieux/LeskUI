@@ -47,7 +47,3 @@ btnHamburger.addEventListener('click', function(){
   }          
 })
 
-var rave = document.getElementById("rave_is_the_answer_id");
-rave.addEventListener("click", function() {
-  window.location.href = "raveistheanswer.html";
-})

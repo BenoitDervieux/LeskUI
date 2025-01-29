@@ -1,3 +1,73 @@
 .nowplaying-details {
     width: 100%;
 }
+
+.effect-name-container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    color: white;
+    
+}
+
+.nowPlaying-name {
+    font-size: 4vh;
+}
+
+.div-nowPlaying-description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+}
+
+.nowPlaying-icon {
+    margin-right: 1vh;
+}
+
+.div-holding-ranges {
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.setting_range::-moz-range-thumb {
+    width: 25px;
+    height: 10px;
+    background: #04AA6D;
+    cursor: pointer;
+    padding: 0px;
+ }
+
+ .setting_range {
+    width: 25px;
+    height: 10px;
+    background: #04AA6D;
+    cursor: pointer;
+    padding: 0px;
+ }
+
+ .name-range {
+    color: white;
+    margin: 0px;
+ }
+
+ .div-range-and-name {
+    
+
+ }
+
+ .rangeAndNumber {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+ .value_display {
+    margin-left: 2vh;
+ }
+

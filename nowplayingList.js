@@ -1,5 +1,5 @@
 const nowPlaying = {
-    "nowPlaying":
+    "effect":
       {
         "name": "Rainbow Cycle",
         "FX_MODE": "FX_MODE_RAINBOW_CYCLE",
