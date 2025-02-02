@@ -1,0 +1,15 @@
+.search_input {
+    margin-right: 2vh;
+    border-radius: 0.5vh;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.86);
+    padding: 0.5vh;
+
+}
+
+.search_input:focus {
+    margin-right: 2vh;
+    border-radius: 0.5vh;
+    border: none;
+    outline: none;
+}

@@ -63,7 +63,7 @@
 
  .rangeAndNumber {
     color: white;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: space-between;
  }
@@ -71,3 +71,77 @@
     margin-left: 2vh;
  }
 
+ 
+
+ @media (max-width: 650px) {
+    .triplet_container {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+     }
+     .colorWheel {
+        /* margin-left: auto;
+        margin-right: auto;*/
+        /* display: contents; */
+        justify-content: center;
+        align-items: center;
+    
+     }
+    
+     .palette_container {
+        justify-content: center;
+        align-items: center;
+     }
+    
+    
+    
+     .setting_name {
+        color: white;
+     }
+
+ }
+
+ @media (min-width: 650px) {
+    .triplet_container {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+
+     }
+
+     .colorWheel {
+        /* margin-left: auto;
+        margin-right: auto;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+
+    
+     }
+    
+     .palette_container {
+        width: 33%;
+        justify-content: center;
+        align-items: center;
+     }
+    
+    
+     .other_inputs_container {
+        width: 33%;
+     }
+    
+     .setting_name {
+        color: white;
+     }
+ }
+
+ 
