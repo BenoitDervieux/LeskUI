@@ -1,0 +1,48 @@
+label {
+    color: white;
+}
+
+#wifiForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ssid, #password, #effectAS {
+    background-color: rgba(255, 255, 255, 0.76);
+    border: none;
+    border: none;
+    padding: 0.5vh;
+}
+
+#ssid:focus, #password:focus, #effectAS:focus {
+
+    border: none;
+    outline: none;
+}
+
+#wifi_submit {
+    background-color: #228be6;
+    border: none;
+    padding: 0.75vh 2vh;
+    color:white;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5vh;
+}
+
+#formEffectAtStart {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#effectAS {
+    margin-top: 0.5vh;
+}
+select {
+    background-color: rgba(0, 255, 255, 0.76);
+}
